@@ -1,0 +1,450 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{MATH 355 Assignment 1}
+\author{Liam Wrubleski}
+\date{September 2019}
+
+\begin{document}
+% Latex Document Declarations
+
+
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{0}
+\newcommand{\mapab}[2]{{#1}\xrightarrow{}{#2}}
+\newcommand{\mapAb}[2]{\mathbb{#1}\xrightarrow{}{#2}}
+\newcommand{\mapaB}[2]{{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\mapAB}[2]{\mathbb{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\symintcc}[1]{[-#1,#1]}
+\newcommand{\symintco}[1]{[-#1,#1)}
+\newcommand{\symintoc}[1]{(-#1,#1]}
+\newcommand{\symintoo}[1]{(-#1,#1)}
+
+
+\maketitle
+\tableofcontents
+
+\section{Definitions}
+\subsection{Injective}
+Given sets $A$ and $B$, and a function $f:\mapab{A}{B}$,
+\begin{displaymath}
+f \textrm{ is injective} \iff \forall a_1, a_2 \in A, a_1 \neq a_2 \implies f(a_1) \neq (a_2)
+\end{displaymath}
+\subsection{Surjective}
+Given sets $A$ and $B$, and a function $f:\mapab{A}{B}$,
+\begin{displaymath}
+f \textrm{ is surjective} \iff \forall b \in B, \exists a \in A : f(a) = b
+\end{displaymath}
+\subsection{Bijective}
+Given sets $A$ and $B$, and a function $f:\mapab{A}{B}$,
+\begin{displaymath}
+f \textrm{ is bijective} \iff f \textrm{ is injective} \land f \textrm{ is surjective}
+\end{displaymath}
+\subsection{Continuous}
+Given intervals $A, B$ on $\mathbb{R}$, and a function $f:\mapab{A}{B}$
+\paragraph{Continuous at a point}
+$f$ is continuous at a point $c \in A$ if and only if
+\begin{displaymath}
+\forall \epsilon > 0, \exists \delta > 0 : \forall x \in A, |x-c| < \delta \implies |f(x)-f(c)| < \epsilon.
+\end{displaymath}
+\paragraph{Continuous on an interval}
+$f$ is continuous on an interval $(a,b) \subseteq A$ if and only if
+\begin{displaymath}
+\forall c \in A, a < c < b \implies f \textrm{ is continuous at c.}
+\end{displaymath}
+\paragraph{Continuous}
+$f$ is continuous if and only if 
+\begin{displaymath}
+A = \mathbb{R} \land \forall c \in A, f \text{ is continuous at c.}
+\end{displaymath}
+%%\section{Lemmas}
+%%\subsection{Continuity of polynomials}
+%%\paragraph{Proposition}
+%%All polynomials are continuous.
+%%\paragraph{Proof}
+%%Let $f$ be a polynomial $f: \mathbb{R}\xrightarrow{}\mathbb{R}, f(x) = a_nx^n+a_{n-1}x^{n-1}+\dots+a_0$, for $n \in \mathbb{Z}; a_i \in \mathbb{R}, i=1\dots n; a_n \neq 0$. Then let $c \in \mathbb{R}$, and $\epsilon > 0$. Then consider 
+%%\begin{equation*}
+%%\delta=\frac{\epsilon}{\displaystyle n!\prod_{i=1}^{n}{(|a_i|+1)}}
+%%\end{equation*}
+\pagebreak
+\section{Question 1}
+\paragraph{Question}
+Determine whether or not the following functions are injective, surjective, or bijective.\newline NOTE: The natural numbers $\mathbb{N}$ exclude 0.
+\subsection{Part a}
+{
+\paragraph{Function}$f:\mapAB{R}{R}, f(x)=x^2+1$
+{
+\paragraph{Injective?}
+$f$ is not injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists x_1, x_2 \in \mathbb{R} : x_1 \neq x_2 \land f(x_1) = f(x_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $x_1=1, x_2=-1$. Then $f(x_1)=(1)^2+1=1+1 = 2$, and $f(x_2)=(-1)^2+1=1+1$. Therefore, $x_1 \neq x_2$, and $f(x_1) = f(x_2)$, as required. Therefore, $f$ is not injective. $\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is not surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists y \in \mathbb{R} : \forall x \in \mathbb{R}, f(x) \neq y$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $y=0$. Then suppose $x \in \mathbb{R}$ satisfies $f(x)=y$, so $x^2+1=0$. Solving this equation for $x$, we obtain the possible solutions $x=\pm\sqrt{-1} \notin \mathbb{R}$, which contradicts the supposition that $x \in \mathbb{R}$. Therefore, $x$ does not exist, and so f is not surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is not bijective.
+\vspace{-10pt}
+\paragraph{Proof}
+The above results show that $f$ is neither injective nor surjective, and it must be both injective and surjective in order to be bijective. Therefore, $f$ is not bijective. $\square$
+}
+}
+\subsection{Part b}
+{
+\paragraph{Function}$f:\mapAb{R}{[0,\infty)}, f(x)=(x-1)^2$
+{
+\paragraph{Injective?}
+$f$ is not injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists x_1, x_2 \in \mathbb{R} : x_1 \neq x_2 \land f(x_1) = f(x_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $x_1=0, x_2=2$. Then $f(x_1)=(0-1)^2=(-1)^2 = 1$, and $f(x_2)=(2-1)^2=(1)^2=1$. Therefore, $x_1 \neq x_2$, and $f(x_1) = f(x_2)$, as required. Therefore, $f$ is not injective. $\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\forall y \in \mathbb{R}, \exists x \in \mathbb{R} : f(x) = y$.
+\vspace{-10pt}
+\paragraph{Proof}
+Let $y \in [0, \infty)$. Then consider $x=\sqrt{y}+1$. Because $y \geq 0$, $\sqrt{y} \in \mathbb{R} \implies x \in \mathbb{R}$. Then 
+\begin{align*}
+    f(x) &= (x-1)^2\\
+    &= (\sqrt{y}+1-1)^2\\
+    &= (\sqrt{y})^2\\
+    &= y
+\end{align*}
+\noindent which shows that f is surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is not bijective.
+\vspace{-10pt}
+\paragraph{Proof}
+The above results show that $f$ is not surjective, and it must be both injective and surjective in order to be bijective. Therefore, $f$ is not bijective. $\square$
+}
+}
+\subsection{Part c}
+{
+\paragraph{Function}$f:\mapAb{R}{\symintcc{\frac{1}{20}}}, f(x)=\sin{5x}$
+{
+\paragraph{Injective?}
+$f$ is injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\forall x_1, x_2 \in \symintcc{\frac{1}{20}}, x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Let $x_1, x_2 \in \symintcc{\frac{1}{20}}$. Then $5x_1,5x_2 \in \symintcc{\frac{1}{4}}$, and $\sin$ is strictly increasing on $\symintcc{\frac{1}{4}}$, so $x_1 < x_2 \implies f(x_1) < f(x_2)$, and vice versa. Therefore, $x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$, and therefore $f$ is injective. $\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is not surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists y \in \symintcc{1} : \forall x \in \symintcc{\frac{1}{20}}, f(x) \neq y$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $y=1$. The values of $x$ for which $sin(5x) = 1$ are those values for which $5x = 2\pi n, n \in \mathbb{Z}$, or $x=\frac{2\pi n}{5}$. The solutions to this equation with the smallest magnitudes are $x = \pm\frac{2\pi}{5}$, both of which are outside of $\symintcc{\frac{1}{20}}$. Therefore, there does not exist $x \in \symintcc{\frac{1}{20}}$ so that $f(x) = 1$, and so $f$ is not surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is not bijective.
+\paragraph{Proof}
+$f$ is not surjective, and so by definition it is not bijective.
+}
+}
+\subsection{Part d}
+{
+\paragraph{Function}$f:\mapAB{R}{R}, f(x)=x^5+3x^3+2x+1$
+{
+\paragraph{Injective?}
+$f$ is injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\forall x_1, x_2 \in \mathbb{R}, x_1 \neq x_2 \implies f(x_1) \neq f(x_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Suppose $x_1, x_2 \in \mathbb{R}$. Then suppose that $x_1\neq x_2,\textrm{ but} f(x_1)=f(x_2).$ Then, as polynomials are continuous and differentiable everywhere, by Rolle's Theorem, there exists some $c \in (x_1, x_2)$ so that $\frac{df}{dx}(c) = 0$. However, taking the derivative of $f$, we obtain $\frac{df}{dx}=5x^4+9x^2+2$, so $5c^4+9c^2+2=0$. This is impossible, because $c^2 \And c^4$ are both non-negative (because $c$ is real), and so the left side is always strictly positive. Therefore, $f$ is injective.$\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\forall y \in \mathbb{R}, \exists x \in \mathbb{R} : f(x) = y$.
+\vspace{-10pt}
+\paragraph{Proof}
+The $\lim\limits_{x \to \infty}f(x) = \infty$, and the $\lim\limits_{x \to -\infty}f(x) = -\infty$, as the fifth order term dominates. Therefore, because $f(x)$ is a polynomial, and thus continuous everywhere, by the Intermediate Value Theorem, for any $y \in \mathbb{R}, \exists x \in (-\infty, \infty)$ so that $f(x) = y$, and therefore $f$ is surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is bijective.
+\vspace{-10pt}
+\paragraph{Proof}
+The above results show that $f$ is both injective and surjective, and is therefore bijective. $\square$
+}
+}
+\subsection{Part e}
+{
+\paragraph{Function}$f:\mapAB{Z}{Z}, f(n)=n^2-n$
+{
+\paragraph{Injective?}
+$f$ is not injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists n_1, n_2 \in \mathbb{Z}: n_1 \neq n_2 \land f(n_1) = f(n_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $n_1 = 1, n_2 = 0$. Then $n_1 \neq n_2$, but $f(n_1) = 1^2-1 = 0$ and $f(n_2) = 0^2-0 = 0$, so $f(n_1) = f(n_2)$. Therefore, $f$ is not injective. $\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is not surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists m \in \mathbb{Z}: \forall n \in \mathbb{Z}, f(n) \neq m$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $m=1$. Then suppose that for some integer $n, f(n) = n^2-n = m$. This, however, implies that $n^2-n = n(n-1) = 1$, but $n$ and $n-1$ are consecutive integers. As such, either $n$ or $n-1$ is divisible by 2, so their product must also be divisible by 2. As 1 is not divisible by 2, this produces a contradiction, so n cannot exist, and so $f$ is not surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is not bijective.
+\vspace{-10pt}
+\paragraph{Proof}
+The above results show that $f$ is neither injective nor surjective, and is therefore not bijective. $\square$
+}
+}
+\subsection{Part f}
+{
+\paragraph{Function}$f:\mapAb{N}{\mathbb{N}\cup\{0\}}, f(n)=n^2-n$
+{
+	\paragraph{Injective?}
+	$f$ is injective.
+	\vspace{-10pt}
+	\paragraph{Proposition}
+	Show that $\forall n_1, n_2 \in \mathbb{N}: n_1 \neq n_2 \implies f(n_1) = f(n_2)$.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	Suppose $n_1, n_2 \in \mathbb{N}$ so that $n_1 \neq n_2$. Without loss of generality, suppose $n_1 < n_2$. Then let $k = n_2-n_1 \implies k > 0$. Then $f(n_2) = f(n_1+k) = (n_1+k)^3-(n_1+k) = n_1^3+3kn_1^2+3k^2n_1+k^2-n_1-k = f(n_1)+(3kn_1^2+3k^2n_1-1)$. In order for the equality $f(n_1) = f(n_2)$ to hold, $k(2n_1-1) = 0$, so either $n_1 = 1/2$, or $k = 0$. However, $n_1$ is an integer, so the first case cannot hold, and we have already shown that $k > 0$. Therefore, $f(n_1) \neq f(n_2)$, so $f$ is injective. $\square$
+}
+{
+	\paragraph{Surjective?}
+	$f$ is not surjective.
+	\vspace{-10pt}
+	\paragraph{Proposition}
+	Show that $\exists m \in \mathbb{N}\cup \{0\}: \forall n \in \mathbb{Z}, f(n) \neq m$.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	Consider $m=1$. Then suppose that for some integer $n, f(n) = n^2-n = m$. This, however, implies that $n^2-n = n(n-1) = 1$, but $n$ and $n-1$ are consecutive integers. As such, either $n$ or $n-1$ is divisible by 2, so their product must also be divisible by 2. As 1 is not divisible by 2, this produces a contradiction, so n cannot exist, and so $f$ is not surjective. $\square$
+}
+{
+	\paragraph{Bijective?}
+	$f$ is not bijective.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	The above results show that $f$ is neither injective nor surjective, and is therefore not bijective. $\square$
+}
+}
+\subsection{Part g}
+{
+\paragraph{Function}$f:\mapAB{Z}{Z}, f(n)=n^3-n$
+{
+\paragraph{Injective?}
+$f$ is not injective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists n_1, n_2 \in \mathbb{Z}: n_1 \neq n_2 \land f(n_1) = f(n_2)$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $n_1 = 1, n_2 = 0$. Then $n_1 \neq n_2$, but $f(n_1) = 1^3-1 = 0$ and $f(n_2) = 0^2-0 = 0$, so $f(n_1) = f(n_2)$. Therefore, $f$ is not injective. $\square$
+}
+{
+\paragraph{Surjective?}
+$f$ is not surjective.
+\vspace{-10pt}
+\paragraph{Proposition}
+Show that $\exists m \in \mathbb{Z}: \forall n \in \mathbb{Z}, f(n) \neq m$.
+\vspace{-10pt}
+\paragraph{Proof}
+Consider $m=1$. Then suppose that for some integer $n, f(n) = n^3-n = m$. This, however, implies that $n^3-n = n(n^2-1) = n(n-1)(n+1) = 1$, but $n$, $n-1$, and $n+1$ are consecutive integers. As such, at least one of them must be divisible by 2, so their product must also be divisible by 2. As 1 is not divisible by 2, this produces a contradiction, so n cannot exist, and so $f$ is not surjective. $\square$
+}
+{
+\paragraph{Bijective?}
+$f$ is not bijective.
+\vspace{-10pt}
+\paragraph{Proof}
+The above results show that $f$ is neither injective nor surjective, and is therefore not bijective. $\square$
+}
+}
+\subsection{Part h}
+{
+\paragraph{Function}$f:\mapAb{N}{\mathbb{N}\cup\{0\}}, f(n)=n^3-n$
+{
+	\paragraph{Injective?}
+	$f$ is injective.
+	\vspace{-10pt}
+	\paragraph{Proposition}
+	Show that $\forall n_1, n_2 \in \mathbb{N}: n_1 \neq n_2 \implies f(n_1) = f(n_2)$.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	% TODO: This proof feels like it's using the injectivity to show the injectivity. Better proof?
+	Suppose $n_1, n_2 \in \mathbb{N}$ so that $n_1 \neq n_2$. Then note that $f(n) = n^3-n = (n-1)n(n+1)$, where $n-1,n,n+1$ are three consecutive integers. The product of three consecutive integers is monotonically increasing, and is only non-increasing at 3 points: $-2*-1*0 = -1*0*1=0*1*2 = 0$. However, note that because $n_1, n_2 \in \mathbb{N}$ and $n_1 \neq n_2$, if $n_1 = 1$ so that $f(n_1) = 0*1*2$, then $n_2 > 1$, so $f(n_2) \neq 0$, so $f$ is injective. $\square$
+}
+{
+	\paragraph{Surjective?}
+	$f$ is not surjective.
+	\vspace{-10pt}
+	\paragraph{Proposition}
+	Show that $\exists m \in \mathbb{N}\cup \{0\}: \forall n \in \mathbb{Z}, f(n) \neq m$.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	Consider $m=1$. Then suppose that for some integer $n, f(n) = n^3-n = m$. This, however, implies that $n^3-n = (n-1)n(n+1) = 1$, but $n-1$, $n$, and $n+1$ are consecutive integers. As such, at least one of $n-1$, $n$, and $n+1$ is divisible by 2, so their product must also be divisible by 2. As 1 is not divisible by 2, this produces a contradiction, so n cannot exist, and so $f$ is not surjective. $\square$
+}
+{
+	\paragraph{Bijective?}
+	$f$ is not bijective.
+	\vspace{-10pt}
+	\paragraph{Proof}
+	$f$ is not surjective, and so by definition it is not bijective. $\square$
+}
+}
+\pagebreak
+\section{Question 2}
+\paragraph{Question}
+Suppose that $f, g, h$ are functions from $\mathbb{R}$ to $\mathbb{R}$.
+\subsection{Part a}
+\paragraph{Question}
+Show that there does not exist $f,g$ satisfying $f(x) + g(y) = xy$ for all $x,y \in \mathbb{R}$.
+\paragraph{Proposition} $\forall f,g: \mapAB{R}{R}, \exists x,y \in \mathbb{R} : f(x)+g(y)\neq xy$.
+\vspace{-10pt}
+\paragraph{Proof}
+Suppose that $f, g: \mapAB{R}{R}$ are functions that do satisfy $f(x) + g(y) = xy$ for all $x, y\in \mathbb{R}$. Then the following four equations must hold:
+\begin{align}
+    f(1) + g(1) =& 1*1 = 1\\
+    f(1) + g(2) =& 1*2 = 2\\
+    f(2) + g(1) =& 2*1 = 2\\
+    f(2) + g(2) =& 2*2 = 4
+\end{align}
+\noindent However, combining (1) and (2) gives that $g(2) = g(1) + 1$, and similarly combining (1) and (3) gives that $f(2) = f(1) + 1$. These two facts show that
+\begin{align*}
+    f(2) + g(2) =& (f(1) + 1)+ (g(1) + 1)\\
+    =& f(1) + g(1) + 2 \textrm{, which by equation (1)}\\
+    =& 1+2 = 3
+\end{align*}
+\noindent which contradicts equation (4) above. Therefore $f, g$ cannot exist, and the proposition is true. $\square$
+\subsection{Part b}
+\paragraph{Question}
+Show that there does not exist $f, g$ satisfying $f(x)g(y) = x + y$ for all $x,y \in \mathbb{R}$.
+\paragraph{Proposition} $\forall f,g: \mapAB{R}{R}, \exists x,y \in \mathbb{R} : f(x)g(y)\neq x+y$.
+\vspace{-10pt}
+\paragraph{Proof}
+Suppose that $f, g: \mapAB{R}{R}$ are functions that do satisfy $f(x)g(y) = x+y$ for all $x, y \in \mathbb{R}$. Then the following four equations must hold:
+\begin{align}
+    f(1)g(1) =& 1+1 = 2\\
+    f(1)g(2) =& 1+2 = 3\\
+    f(2)g(1) =& 2+1 = 3\\
+    f(2)g(2) =& 2+2 = 4
+\end{align}
+\noindent However, combining (5) and (6) gives that $g(2) = \frac{3}{2}g(1)$, and similarly combining (5) and (7) gives that $f(2) = \frac{3}{2}f(1)$. These two facts show that
+\begin{align*}
+    f(2)g(2) =& \left(\frac{3}{2}f(1)\right)\left(\frac{3}{2}g(1)\right)\\
+    =& \frac{9}{4}f(1)g(1)\textrm{, which by equation (5)}\\
+    =& \frac{9}{4}(2) = \frac{9}{2}
+\end{align*}
+\noindent which contradicts equation (8) above. Therefore $f, g$ cannot exist, and the proposition is true. $\square$
+\subsection{Part c}
+\paragraph{Question} Show that there does not exist three functions $f,g,h$ which satisfy
+\begin{equation*}
+    f(x) + g(y) + h(z) = xyz
+\end{equation*}
+\noindent for all $x,y,z \in \mathbb{R}$.
+\paragraph{Proposition} $\forall f,g,h: \mapAB{R}{R}, \exists x,y,z \in \mathbb{R} : f(x)+g(y)+h(z)\neq xyz$
+\vspace{-10pt}
+\paragraph{Proof} Suppose that $f,g,h$ are functions that satisfy the above equation for all real numbers $x,y,z$. Then consider $z=0$. In this case
+\begin{align*}
+    f(x) + g(y) + h(0) =& 0\\
+    f(x) + g(y) =& -h(0), \forall x,y \in \mathbb{R}
+\end{align*}
+\noindent where -h(0) is some constant real number. Then consider $x = (-h(0)+h(1)+1), y = 1, z = 1$. In this case, $x,y,z \in \mathbb{R}$, and in order for the equation to hold
+\begin{align*}
+    f(-h(0)-h(1)+1) + g(1) + h(1) =& (-h(0)+h(1)+1)(1)(1)\\
+    =& -h(0)+h(1)+1
+    f(-h(0)+h(1)+1)+g(1) =& -h(0)+1
+\end{align*}
+\noindent which is a contradiction, as we have already seen that for any real numbers $x,y$, $f(x)+g(y) = -h(0)$. Therefore, $f,g,h$ cannot exist, and the proposition is true. $\square$
+\pagebreak
+\section{Question 3}
+\paragraph{Question} Show that the infinite product
+\begin{equation*}
+    \displaystyle\prod_{i=1}^{\infty}\{0,1\}
+\end{equation*}
+\noindent is uncountable (you can think of this as the set of infinite strings of 0s and 1s).
+\paragraph{Proposition} There does not exist a surjection from $\mathbb{N}$ to $\displaystyle\prod_{i=1}^{\infty}\{0,1\}$.
+\vspace{-10pt}
+\paragraph{Proof} This proof will use a modified version of Cantor's Diagonalization argument. Let $S$ represent the set in question. Suppose that the described set is countable, so there exists a surjection  $f:\mapAb{N}{S}$. We will now construct an item $X\in S$, so that there does not exist $n\in \mathbb{N}$ such that $f(n)=X$. Regarding $S$ as the set of infinite strings of 0s and 1s, for all $n \in \mathbb{N}$, let the $n$th character of $X$ be the opposite of the $n$th character of $f(n)$ (i.e. if the $n$th character of $f(n)$ is 0, the $n$th character of X is 1, and vice versa). Then, for every $n \in \mathbb{N}, X \neq f(n)$, because it differs in at least one position. Therefore, the surjection $f$ cannot exist, and so S is uncountable. 
+\pagebreak
+\section{Question 4}
+\paragraph{Question} Suppose $x_1,x_2,y_1,y_2$ are real numbers. Show that
+\begin{equation*}
+    x_1y_1 + x_2y_2 \leq \sqrt{x_1^2+x_2^2}\sqrt{y_1^2+y_2^2}.
+\end{equation*}
+\noindent Fully describe the set of points for which the above inequality is an equality.
+\paragraph{Answer} Consider the vectors $\textbf{x}=<x_1, x_2>, \textbf{y} = <y_1, y_2>$. The dot product of these two vectors is $x_1y_1 + x_2y_2$, which is the left hand side of the inequality above. Then consider $||\textbf{x}||||\textbf{y}|| = \sqrt{x_1^2+x_2^2}\sqrt{y_1^2+y_2^2}$, which is the right hand side of the inequality above. Therefore, the proposition above is equivalent to
+\begin{equation*}
+	\forall \textbf{x},\textbf{y} \in \mathbb{R}^2, \textbf{x}\cdot\textbf{y} \leq ||\textbf{x}||||\textbf{y}||,
+\end{equation*}
+\noindent which is easy to show using the fact that $\textbf{x}\cdot\textbf{y} = ||\textbf{x}||||\textbf{y}||\cos(\theta)$, where $\theta$ is the angle between the vectors $\textbf{x}$ and $\textbf{y}$. As $\cos(\theta) \in [-1,1]$ for $\theta \in [0, 2\pi)$, the inequality is always true.\newline
+The inequality holds as an equality when $\cos(\theta) = 1$, which has one solution in $[0,2\pi)$, namely $\theta = 0$. Therefore, the inequality is an equality if and only if the vectors $\textbf{x}, \textbf{y}$ are collinear, so when $y_1 = kx_1$ and $x_2 = kx_2$ for some real number $k$.
+\pagebreak
+\section{Question 5}
+\subsection{Part a}
+\paragraph{Question} Suppose $x < y$ are real numbers. Show that there are infinitely many distinct rational numbers $q$ such that $x < q < y$.
+\paragraph{Answer}
+Let $n$ be the smallest integer so that $1 < 10^n(y-x)\leq 10$. Then 
+\begin{equation*}
+    a = \frac{\textrm{sgn}(x)\lfloor10^n|x|\rfloor+1}{10^n}
+\end{equation*} 
+\noindent is a rational number so that $x < a < y$. Then let $m$ be the smallest integer so that $\frac{1}{m} < y-a$. Then, for all integers $i\geq m, x < a+\frac{1}{i} < y$, so there are infinitely many rational numbers between $x$ and $y. \square$
+\subsection{Part b}
+\paragraph{Question} Suppose $x < y$ are real numbers. Show that there are infinitely many distinct irrational numbers $w$ such that $x < w < y$. Are there uncountable many?
+\paragraph{Answer}
+Let $n$ be the smallest integer so that $1 < 10^n(y-x)\leq 10$. Then 
+\begin{equation*}
+    a = \frac{\textrm{sgn}(x)\lfloor10^n|x|\rfloor+1}{10^n}
+\end{equation*} 
+\noindent is a rational number so that $x < a < y$. Then let $m$ be the smallest integer so that $\frac{1}{m} < y-a$, and let $S$ the set of all irrational numbers between 0 and 1. Note that $S$ is uncountable. Now, for each element $k \in S, x < a + \frac{k}{m} < y$, and because $a$ is rational and $m$ is an integer, $a+\frac{k}{m}$ is irrational. Therefore, there are uncountably many irrational numbers between $x$ and $y$.  
+\pagebreak
+\section{Question 6}
+\subsection{Part a}
+\paragraph{Question}Find an explicit injection $f: \mapAB{Q}{Z}$.
+\paragraph{Answer}Given $\frac{p}{q}, p,q \in \mathbb{Z}, q \neq 0$, let $f(\frac{p}{q})=2^p3^q$.
+\subsection{Part b}
+\paragraph{Question}Find an explicit injection $g: \mapAB{Q \times Q}{Z}$.
+\paragraph{Answer}Given $(\frac{n}{m},\frac{p}{q}), n,m,p,q \in \mathbb{Z}, m,q \neq 0$, let $g(\frac{n}{m},\frac{p}{q}) = 2^n3^m5^p7^q$.
+\subsubsection{Part c}
+\paragraph{Question}Find an explicit injection $h: \mapAB{Z\times Z\times Z}{Z\times Z}$.
+\paragraph{Answer}Given $(a,b,c), a,b,c \in \mathbb{Z}$, let $h(a,b,c)=(2^a3^b5^c,2^a3^b5^c)$.
+\pagebreak
+\section{Question 7}
+\paragraph{Question} Suppose $A$ and $B$ are both bounded subsets of $\mathbb{R}$. Find a property "X" so that the statement $\sup{A} = \inf{B}$ if and only if "X" holds is true.
+\paragraph{Answer} $|\textrm{Conv}(A\cup B)-A-B|=1$.
+\end{document}

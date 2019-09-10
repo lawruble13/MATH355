@@ -1,0 +1,131 @@
+\contentsline {section}{Definitions}{1}% 
+\contentsline {subsection}{Injective}{1}% 
+\contentsline {subsection}{Surjective}{1}% 
+\contentsline {subsection}{Bijective}{1}% 
+\contentsline {subsection}{Continuous}{2}% 
+\contentsline {paragraph}{Continuous at a point}{2}% 
+\contentsline {paragraph}{Continuous on an interval}{2}% 
+\contentsline {paragraph}{Continuous}{2}% 
+\contentsline {section}{Question 1}{3}% 
+\contentsline {paragraph}{Question}{3}% 
+\contentsline {subsection}{Part a}{3}% 
+\contentsline {paragraph}{Function}{3}% 
+\contentsline {paragraph}{Injective?}{3}% 
+\contentsline {paragraph}{Proposition}{3}% 
+\contentsline {paragraph}{Proof}{3}% 
+\contentsline {paragraph}{Surjective?}{3}% 
+\contentsline {paragraph}{Proposition}{3}% 
+\contentsline {paragraph}{Proof}{3}% 
+\contentsline {paragraph}{Bijective?}{3}% 
+\contentsline {paragraph}{Proof}{3}% 
+\contentsline {subsection}{Part b}{3}% 
+\contentsline {paragraph}{Function}{3}% 
+\contentsline {paragraph}{Injective?}{3}% 
+\contentsline {paragraph}{Proposition}{3}% 
+\contentsline {paragraph}{Proof}{3}% 
+\contentsline {paragraph}{Surjective?}{3}% 
+\contentsline {paragraph}{Proposition}{3}% 
+\contentsline {paragraph}{Proof}{4}% 
+\contentsline {paragraph}{Bijective?}{4}% 
+\contentsline {paragraph}{Proof}{4}% 
+\contentsline {subsection}{Part c}{4}% 
+\contentsline {paragraph}{Function}{4}% 
+\contentsline {paragraph}{Injective?}{4}% 
+\contentsline {paragraph}{Proposition}{4}% 
+\contentsline {paragraph}{Proof}{4}% 
+\contentsline {paragraph}{Surjective?}{4}% 
+\contentsline {paragraph}{Proposition}{4}% 
+\contentsline {paragraph}{Proof}{4}% 
+\contentsline {paragraph}{Bijective?}{4}% 
+\contentsline {paragraph}{Proof}{4}% 
+\contentsline {subsection}{Part d}{4}% 
+\contentsline {paragraph}{Function}{4}% 
+\contentsline {paragraph}{Injective?}{4}% 
+\contentsline {paragraph}{Proposition}{4}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {paragraph}{Surjective?}{5}% 
+\contentsline {paragraph}{Proposition}{5}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {paragraph}{Bijective?}{5}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {subsection}{Part e}{5}% 
+\contentsline {paragraph}{Function}{5}% 
+\contentsline {paragraph}{Injective?}{5}% 
+\contentsline {paragraph}{Proposition}{5}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {paragraph}{Surjective?}{5}% 
+\contentsline {paragraph}{Proposition}{5}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {paragraph}{Bijective?}{5}% 
+\contentsline {paragraph}{Proof}{5}% 
+\contentsline {subsection}{Part f}{5}% 
+\contentsline {paragraph}{Function}{5}% 
+\contentsline {paragraph}{Injective?}{6}% 
+\contentsline {paragraph}{Proposition}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {paragraph}{Surjective?}{6}% 
+\contentsline {paragraph}{Proposition}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {paragraph}{Bijective?}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {subsection}{Part g}{6}% 
+\contentsline {paragraph}{Function}{6}% 
+\contentsline {paragraph}{Injective?}{6}% 
+\contentsline {paragraph}{Proposition}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {paragraph}{Surjective?}{6}% 
+\contentsline {paragraph}{Proposition}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {paragraph}{Bijective?}{6}% 
+\contentsline {paragraph}{Proof}{6}% 
+\contentsline {subsection}{Part h}{7}% 
+\contentsline {paragraph}{Function}{7}% 
+\contentsline {paragraph}{Injective?}{7}% 
+\contentsline {paragraph}{Proposition}{7}% 
+\contentsline {paragraph}{Proof}{7}% 
+\contentsline {paragraph}{Surjective?}{7}% 
+\contentsline {paragraph}{Proposition}{7}% 
+\contentsline {paragraph}{Proof}{7}% 
+\contentsline {paragraph}{Bijective?}{7}% 
+\contentsline {paragraph}{Proof}{7}% 
+\contentsline {section}{Question 2}{8}% 
+\contentsline {paragraph}{Question}{8}% 
+\contentsline {subsection}{Part a}{8}% 
+\contentsline {paragraph}{Question}{8}% 
+\contentsline {paragraph}{Proposition}{8}% 
+\contentsline {paragraph}{Proof}{8}% 
+\contentsline {subsection}{Part b}{8}% 
+\contentsline {paragraph}{Question}{8}% 
+\contentsline {paragraph}{Proposition}{8}% 
+\contentsline {paragraph}{Proof}{8}% 
+\contentsline {subsection}{Part c}{9}% 
+\contentsline {paragraph}{Question}{9}% 
+\contentsline {paragraph}{Proposition}{9}% 
+\contentsline {paragraph}{Proof}{9}% 
+\contentsline {section}{Question 3}{10}% 
+\contentsline {paragraph}{Question}{10}% 
+\contentsline {paragraph}{Proposition}{10}% 
+\contentsline {paragraph}{Proof}{10}% 
+\contentsline {section}{Question 4}{11}% 
+\contentsline {paragraph}{Question}{11}% 
+\contentsline {paragraph}{Answer}{11}% 
+\contentsline {section}{Question 5}{12}% 
+\contentsline {subsection}{Part a}{12}% 
+\contentsline {paragraph}{Question}{12}% 
+\contentsline {paragraph}{Answer}{12}% 
+\contentsline {subsection}{Part b}{12}% 
+\contentsline {paragraph}{Question}{12}% 
+\contentsline {paragraph}{Answer}{12}% 
+\contentsline {section}{Question 6}{13}% 
+\contentsline {subsection}{Part a}{13}% 
+\contentsline {paragraph}{Question}{13}% 
+\contentsline {paragraph}{Answer}{13}% 
+\contentsline {subsection}{Part b}{13}% 
+\contentsline {paragraph}{Question}{13}% 
+\contentsline {paragraph}{Answer}{13}% 
+\contentsline {subsubsection}{Part c}{13}% 
+\contentsline {paragraph}{Question}{13}% 
+\contentsline {paragraph}{Answer}{13}% 
+\contentsline {section}{Question 7}{14}% 
+\contentsline {paragraph}{Question}{14}% 
+\contentsline {paragraph}{Answer}{14}% 
