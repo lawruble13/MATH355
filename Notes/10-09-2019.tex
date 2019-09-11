@@ -1,7 +1,8 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{enumitem}
 
 \title{MATH 355 Notes}
@@ -64,5 +65,65 @@
 		\item Tutorial this week\\
 		\item $a\in f^{-1}(D_1\cap D_2)\iff f(a)\in D_1\cap D_2\iff a\in f^{-1}(D_1)\land a\in f^{-1}(D_2)$\\
 		\item $a\in A\setminus f^{-1}(D)\iff f(a)\notin D$\\but $f:\mapab{A}{B}\implies f(a)\in B$ so $f(a)\in B\land f(a)\notin D\iff f(a)\in B\setminus D\iff a\in f^{-1}(B\setminus D)$.
+	\end{enumerate}
+	\paragraph{Example} (failure of equality for a) - c))\newline
+	\begin{align*}
+	f:\mapAB{R}{R}, f(x) = x^2
+	\end{align*}
+	Let $C_1 = [-1,0], C_2 = [0,1]$. $C_1\cap C_2 = {0}$, so $f(C_1\cap C_2) = {0}$, but $f(C_1)=f(C_2)=[0,1]\implies f(C_1)\cap f(C_2) = [0,1]\supsetneq {0}$.\newline
+	Let $C = \{1\}$ so $f(C)={1}$, but $f^{-1}(\{1\})=\{-1,1\}, so C\subsetneq f^{-1}(f(C))$.\newline
+	Let $D=[-1,1]$. Then $f^{-1}(D)=\{x\in\mathbb{R}|-1\leq x^2\leq 1\}=[-1,1]$ and $f([-1,1])\subsetneq D$.
+	\paragraph{Proposition}
+	\begin{enumerate}[label=(\roman*)]
+		\item If $f:\mapab{A}{B}$ is injective, statements a) and c) become equalities.\\
+		\item If $f:\mapab{A}{B}$ is surjective, then statement b) is an equality.
+	\end{enumerate}
+	\paragraph{Proof}
+	\begin{enumerate}[label=(\roman*)]
+		\item We already know that $C\subseteq f^{-1}(f(C))$. Then let $f(a) \in f(C)$. This means $\exists c\in C:f(a) = f(c)$. Because $f$ is injective, $f(a) = f(c)\implies a=c$, so $a\in C$, so $f^{-1}(f(C))\subseteq C$, so $C = f^{-1}(f(C))$.\\
+		Statement c) is similar.\\
+		\item We already know that $f(f^{-1}(D)) \subseteq D$. Let $d\in D$. Then $\exists a\in A:d=f(a)$, by surjectivity of $f$. Then $a\in f^{-1}(D) \implies f(a)\in f(f^{-1}(D))$. Therefore $D\subseteq f(f^{-1}(D))\implies D=f(f^{-1}(D))$. 
+	\end{enumerate}
+	\paragraph{Definition}
+	Suppose $f:\mapab{A}{B}, g:\mapab{B}{C}.$\newline
+	The \textbf{composition} $g\circ f:\mapab{A}{C}$ is the function
+	\begin{equation*}
+	g\circ f(a) = g(f(a))
+	\end{equation*}
+	Remarks:
+	\begin{itemize}
+		\item Even if $g\circ f$ is defined, $f\circ g$ may not be.\\
+		\item Even if both $g\circ f$ and $f\circ g$ are defined with $A=B=C$, they are not generally the same functions.
+	\end{itemize}
+	\paragraph{Proposition}
+	Suppose $f:\mapab{A}{B}, g:\mapab{B}{C}$.
+	\begin{enumerate}[label=\alph*)]
+		\item If $f$ and $g$ are injective, then $g\circ f$ is injective.\\
+		\item If $f$ and $g$ are surjective, then $g\circ f$ is surjective.\\
+		\item If $f$ and $g$ are bijective, then $g\circ f$ is bijective.
+	\end{enumerate}
+	\paragraph{Definition}
+	Suppose $f:\mapab{A}{B}$. $f$ is \textbf{invertible} if and only if $\exists g:\mapab{B}{A} : g\circ f = id_A \land f\circ g = id_B$.
+	\paragraph{Proposition}
+	The function $g$ above is unique when it exists.
+	\paragraph{Proof}
+	Suppose $g,g_1:\mapab{B}{A}$ so $g\circ f = g_1\circ f = id_A$ and $f\circ g = f\circ g_1 = id_B$. Let $b\in B$. Then
+	\begin{align*}
+	g(b) &= g(f\circ g_1(b))\textrm{, since} f\circ g_1=id_B\\
+	&=g(f(g_1(b))) = (g\circ f)(g_b(b)) = g_1(b)\textrm{, since} g\circ f = id_A
+	\end{align*}
+	So $g(b)=g_1(b)\forall b\in B\implies g=g_1$.
+	\paragraph{Definition}
+	If $f$ is invertible, the unique function $g$ above is called the \textbf{inverse} of $f$, and is denoted $f^{-1}$.
+	\paragraph{Proposition}
+	$f:\mapab{A}{B}$ is invertible if and only if $f$ is a bijection.
+	\paragraph{Proof}
+	\begin{enumerate}[label=(\roman*)]
+		\item $f:\mapab{A}{B}$ is invertible $\implies$ $f$ is a bijection.\\
+		Suppose $f$ is invertible, and $f(a_1)=f(a_2)$. Then $f^{-1}(f(a_1))=f^{-1}(f(a_2))\implies a_1=a_2$, so $f$ is injective.\\
+		Suppose $b\in B$. Then $f(f^{-1}(b)) = b$, so $\forall b\in B, \exists a\in A : f(a) = b$, with $a = f^{-1}(b)$.\\
+		\item $f$ is a bijection $\implies$ $f:\mapab{A}{B}$ is invertible.\\
+		Suppose $f$ is a bijection. Then for $\overbrace{\textrm{every }b\in B}^{surjectivity}$ there is a $\overbrace{\textrm{unique } a\in A}^{injectivity}$ so that $f(a) = b$. Then for each $b\in B$, define $g:\mapab{B}{A}$ by $g(b) = a$. Then $g=f^{-1}$.\\
+		Check: $g$ is well defined
 	\end{enumerate}
 \end{document}
