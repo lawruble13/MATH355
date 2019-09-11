@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+\title{MATH 355 Notes}
+\author{Liam Wrubleski}
+\date{September 10 2019}
+
+\newcommand{\mapab}[2]{{#1}\xrightarrow{}{#2}}
+\newcommand{\mapAb}[2]{\mathbb{#1}\xrightarrow{}{#2}}
+\newcommand{\mapaB}[2]{{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\mapAB}[2]{\mathbb{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\symintcc}[1]{[-#1,#1]}
+\newcommand{\symintco}[1]{[-#1,#1)}
+\newcommand{\symintoc}[1]{(-#1,#1]}
+\newcommand{\symintoo}[1]{(-#1,#1)}
+
+\begin{document}
+	\maketitle
+	\paragraph{Definition}
+	Given $f:\mapab{A}{B}$ and $C\subseteq A, D\subseteq B:$
+	\begin{itemize}
+		\item The \textbf{image} of $C$ under $f$ is $f(C) = {f(c)|c\in C}$.\\
+		\item The \textbf{preimage} of $D$ under $f$ is $f^{-1}(D) = {a\in A|f(a)\in D}$.\\
+	\end{itemize}
+	If $f$ is invertible, the $f^{-1}(D)$ is the image of $D$ under $f^{-1}$.
+	\paragraph{Example}
+	\begin{align*}
+	&f:\mapAB{R}{R}, f(x) = x^2\\
+	&C = [-4, 1]\\
+	&f(C) = [0,16]\\~\\
+	&D = [2,16]\\
+	&f^{-1}(D) = [-4,-\sqrt{2}]\cup[\sqrt{2},4]\\~\\
+	&E=(-\infty,-2)\\
+	&f^{-1}(E) = {x\in\mathbb{R}|x^2\in E} = \emptyset\\
+	\end{align*}
+	\paragraph{Example}
+	\begin{align*}
+	&\chi_S:\mapab{A}{\{0,1\}}, \chi_S=\begin{cases}1, & x\in S\\0, & x\in A\setminus S
+	\end{cases}\\
+	&\chi_S^{-1}(\{0\}) = A\setminus S\\
+	&\chi_S^{-1}(\{1\}) = S
+	\end{align*}
+	\paragraph{Proposition}
+	Given $f:\mapab{A}{B}, C,C_1,C_2 \subseteq A, D,D_1,D_2 \subseteq B,$
+	\begin{enumerate}[label=\alph*)]
+		\item $C\subseteq f^{-1}(f(C))$\\
+		\item $f(f^{-1}(D))\subseteq D$\\
+		\item $f(C_1\cap C_2)\subseteq f(C_1)\cap f(C_2)$\\
+		\item $f(C_1\cup C_2) = f(C_1)\cup f(C_2)$\\
+		\item $f^{-1}(D_1\cup D_2) = f^{-1}(D_1)\cup f^{-1}(D_2)$\\
+		\item $f^{-1}(D_1\cap D_2) = f^{-1}(D_1)\cap f^{-1}(D_2)$\\
+		\item $f^{-1}(B\setminus D) = A\setminus f^{-1}(D)$
+	\end{enumerate}
+	\paragraph{Proof}
+	\begin{enumerate}[label=\alph*)]
+		\item $f^{-1}(f(c))\stackrel{\textrm{def}}{=}\{a\in A|f(a)\in f(C)\}$\\
+		This set includes $C$ since, by definition, $f(c)\in f(C) \forall c\in C$.\\
+		\item $f(f^{-1}(D)) = \{f(a)|a\in f^{-1}(D)\}=\{f(a)|f(a)\in D\}\subseteq D$.\\
+		\item Suppose $b\in f(C_1\cap C_2)$\\$\implies\exists a\in C_1\cap C_2:b=f(a)$\\$\implies b\in f(C_1)\land b\in f(C_2)$\\
+		\item Similar to c)\\
+		\item Tutorial this week\\
+		\item $a\in f^{-1}(D_1\cap D_2)\iff f(a)\in D_1\cap D_2\iff a\in f^{-1}(D_1)\land a\in f^{-1}(D_2)$\\
+		\item $a\in A\setminus f^{-1}(D)\iff f(a)\notin D$\\but $f:\mapab{A}{B}\implies f(a)\in B$ so $f(a)\in B\land f(a)\notin D\iff f(a)\in B\setminus D\iff a\in f^{-1}(B\setminus D)$.
+	\end{enumerate}
+\end{document}

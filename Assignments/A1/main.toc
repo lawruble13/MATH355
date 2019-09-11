@@ -77,7 +77,7 @@
 \contentsline {paragraph}{Proposition}{6}% 
 \contentsline {paragraph}{Proof}{6}% 
 \contentsline {paragraph}{Bijective?}{6}% 
-\contentsline {paragraph}{Proof}{6}% 
+\contentsline {paragraph}{Proof}{7}% 
 \contentsline {subsection}{Part h}{7}% 
 \contentsline {paragraph}{Function}{7}% 
 \contentsline {paragraph}{Injective?}{7}% 

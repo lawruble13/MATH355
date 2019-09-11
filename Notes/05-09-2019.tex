@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+\title{MATH 355 Notes}
+\author{Liam Wrubleski}
+\date{September 5 2019}
+
+\newcommand{\mapab}[2]{{#1}\xrightarrow{}{#2}}
+\newcommand{\mapAb}[2]{\mathbb{#1}\xrightarrow{}{#2}}
+\newcommand{\mapaB}[2]{{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\mapAB}[2]{\mathbb{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\symintcc}[1]{[-#1,#1]}
+\newcommand{\symintco}[1]{[-#1,#1)}
+\newcommand{\symintoc}[1]{(-#1,#1]}
+\newcommand{\symintoo}[1]{(-#1,#1)}
+
+\begin{document}
+	\maketitle
+	
+	\section{Topic 1 - Functions and Cardinality}
+	\paragraph{Definition} Given sets $A$ and $B$, the \textbf{Cartesian Product of $A$ and $B$} is the set of ordered pairs
+	\begin{equation*}
+		A\times B = \{(a,b)|a\in A, b \in B\}
+	\end{equation*}
+	Given any finite list of N sets $A_1, A_2,\dots,A_N$, the \textbf{Cartesian Product of $A_i$} is
+	\begin{equation*}
+		A_1\times A_2\times\dots\times A_N = \{(a_1,a_2,\dots,a_n)|a_i\in A_i; i=1,2,\dots,N\}
+	\end{equation*}
+	\paragraph{Example}
+	\begin{align*}
+	\mathbb{R}^2 =& \mathbb{R}\times\mathbb{R} \\
+	\mathbb{R}^N =& \underbrace{\mathbb{R}\times\mathbb{R}\times\dots\times\mathbb{R}}_N
+	\end{align*}
+	When $\mathbb{T}$ is the unit circle (i.e. $\mathbb{T} = \{(a,b)|a,b\in \mathbb{R}, a^2+b^2=1\}$), $\mathbb{T}^2$ is the unit torus.
+	\paragraph{Definition}
+	A \textbf{function} $f$ from $A$ to $B$ is a subset $f \subseteq A\times B$ with the additional property that for all $a\in A$, there is a single $b \in B$ so that $(a,b) \in f$. Then $b = f(a)$.
+	Given a function $f: \mapab{A}{B}$, $A$ is the \textbf{domain} of $f$ (denoted $\textrm{dom}(f)$), and $B$ is the \textbf{codomain} of $f$ (denoted $\textrm{codom}(f)$). The \textbf{range} of $f$ is the set ${f(a)|a \in A}$ (denoted $\textrm{ran}(f)$).
+	\paragraph{Example}
+	\begin{align*}
+	&f: \mapAB{R}{R}, f(x) = x^2\\
+	&\textrm{dom}(f) = \textrm{codom}(f) = \mathbb{R}\\
+	&\textrm{ran}(f) = [0,\infty)\\~\\
+	&g: \mapAB{R}{R}, g(x) = x^3\\
+	&\textrm{dom}(g) = \textrm{codom}(g) = \textrm{ran}(g) = \mathbb{R}\\~\\
+	&h: \mapaB{[0,\pi]}{R}, h(x) = cos(x)\\
+	&\textrm{dom}(h) = [0,\pi]\\
+	&\textrm{codom}(h) = \mathbb{R}\\
+	&\textrm{ran}(h) = \symintcc{1}
+	\end{align*}
+	\paragraph{Definition}
+	Given $f: \mapab{A}{B}$,
+	\begin{enumerate}[label=(\roman*)]
+		\item $f$ is injective $\iff f(a_1)=f(a_2)\implies a_1=a_2 \forall a_1,a_2\in A$
+		\item $f$ is surjective $\iff \forall b\in B, \exists a\in A : f(a) = b$
+		\item $f$ is bijective $\iff$ $f$ is injective and $f$ is surjective
+	\end{enumerate}
+	\paragraph{Example}
+	\begin{equation*}
+	k:\mapAB{Z^+}{Z}, k(n) = \begin{cases}
+	\frac{n}{2}, & n\textrm{ even}\\
+	-\left(\frac{n-1}{2}\right), & n\textrm{ odd}
+	\end{cases}
+	\end{equation*}
+	is a bijection.
+	\paragraph{Proposition} $k$ is injective.\newline
+	Let $a, b \in \mathbb{Z}^+$. Prove injectivity by contradiction.
+\end{document}
