@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\title{MATH 355 Notes}
+\author{Liam Wrubleski}
+\date{September 10 2019}
+
+\newcommand{\mapab}[2]{{#1}\xrightarrow{}{#2}}
+\newcommand{\mapAb}[2]{\mathbb{#1}\xrightarrow{}{#2}}
+\newcommand{\mapaB}[2]{{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\mapAB}[2]{\mathbb{#1}\xrightarrow{}\mathbb{#2}}
+\newcommand{\symintcc}[1]{[-#1,#1]}
+\newcommand{\symintco}[1]{[-#1,#1)}
+\newcommand{\symintoc}[1]{(-#1,#1]}
+\newcommand{\symintoo}[1]{(-#1,#1)}
+
+\begin{document}
+	\maketitle
+	\section{Topic 1 - Functions and Cardinality (cont)}
+	\paragraph{Example} Invertible functions\newline
+	\begin{enumerate}[label=(\roman*)]
+		\item $f:=mapAB{R}{R}, f(x) = x^3$\\
+		The inverse is $f^{-1}(x) = \sqrt[3](x)$.\\
+		\item $f:\mapAB{R}{R}, f(x) = x^3+3x+2$\\
+		Inverse is hard to find.\\
+		$f'(x) = 3x^2+3>0$\\
+		So $f$ is strictly increasing $\implies f$ is injective.\\
+		$\lim\limits_{x\to\infty}f(x)=\infty, \lim\limits_{x\to-\infty}f(x)=-\infty$\\
+		So $f$ is surjective.\\
+		\item $g:\mapAB{Z}{N}$\\
+		\begin{equation*}
+		g(n) = \begin{cases}\frac{n}{2}, & n\textrm{ even}\\\frac{n+1}{2}, & n\textrm{ n odd}
+		\end{cases}
+		\end{equation*}
+		%% find g inverse
+	\end{enumerate}
+	\paragraph{Example}
+	If $f:\mapab{A}{B}, g:\mapab{B}{C}$ are invertible, then so is $g\circ f:\mapab{A}{C}$ and $(g\circ f) = f^{-1}\circ g^{-1}$
+	\paragraph{Example}
+	(Composition of invertibles)\newline
+	\begin{align*}
+	f:\mapAb{R}{(0,\infty)} & f(x) = e^x\\
+	f^{-1}:\mapaB{(0,\infty)}{R} & f^{-1}(x) = \log(x)\\
+	g:\mapab{(0,\infty)}{(1,\infty)} & g(x) = x^3+1\\
+	g^{-1}:\mapab{(1,\infty)}{(0,\infty)} & g^{-1}(x) = \sqrt[3]{x-1}\\
+	\mathbb{R}\xrightarrow{f}(0,\infty)\xrightarrow{g}(1,\infty)\\
+	g\circ f:\mapAb{R}{(1,\infty)}\\
+	g\circ f(x) = g(f(x)) = (e^x)^3+1 = e^{3x}+1
+	(g\circ f)^{-1} = f^{-1}\circ g^{-1}:\mapaB{(1,\infty)}{R}\\
+	f^{-1}(g^{-1}(x))=f^{-1}(\sqrt[3]{x-1})=\log(\sqrt[3]{x-1})
+	\end{align*}
+	\subsection{Cardinality}
+	\paragraph{Definition}
+	Two sets $A, B$ are \textbf{equinumerous} if $\exists$ a bijection $f:\mapab{A}{B}$. We write $A\sim B$ in this case.
+	\paragraph{Proposition}
+	"~" is an equivalence relation on sets. i.e.\newline
+	\begin{enumerate}[label=(\roman*)]
+		\item $A\sim A$\\
+		\item $A\sim B \implies B\sim A$\\
+		\item $A\sim B \land B\sim C \implies A\sim C$
+	\end{enumerate}
+	\paragraph{Definition}
+	Suppose $A$ is a set and $I_n=\{1,2,\dots,n\}, n\in \mathbb{N}$.
+	\begin{enumerate}[label=(\roman*)]
+		\item $A$ is \textbf{finite} if $A\sim I_n$ for some $n\in \mathbb{N}$.\\
+		\item $A$ is \textbf{infinite} if it is not finite.\\
+		\item $A$ is \textbf{denumerable} if $A\sim\mathbb{N}$.\\
+		\item $A$ is \textbf{countable} if $A$ is either finite xor denumerable.\\
+		\item $A$ is \textbf{uncountable} if $A$ is not countable.
+	\end{enumerate}
+	\paragraph{Example} We know $\mathbb{N}\sim\mathbb{Z}$, so $\mathbb{Z}$ is denumerable.\newline
+	The function $f:\mapAB{N\cup\{0\}}{N}, f(n)=n+1$ is invertible. So $\mathbb{N}\cup\{0\}\sim\mathbb{N}$.\newline
+	This implies that if $A$ is denumerable then $A\cup\{a\}$ is denumerable.\newline
+	This extends to: If $A$ is denumerable and B finite, then $A\cup B$ is denumerable.
+	\paragraph{Proposition}If $B$ is countable and $A\subseteq$, then $A$ is countable.
+	\paragraph{Proof} Check that if $B$ is finite, then so is $A$.\newline
+	Assume $B$ is denumerable and $A\subseteq B$.\newline
+	Write $B=\{b_1,b_2,\dots \}$ (here the map $f(n)=b_n$ is the bijection $\mapAb{N}{B}$).\newline
+	Since $A\subseteq B$, we can find increasing natural numbers \[n_1<n_2<n_3\dots\] so that $A=\{b_{n_1},b_{n_2},\dots\}$.\newline
+	If there are only finitely many $n_i$, $A$ is finite.\newline
+	If not, the map $g:\mapaB{A}{N},g(b_{n_i})=i$ is a bijection. (check). $\square$
+	\paragraph{Corollary}If $A$ is uncountable and $A\subseteq B$, then $B$ is uncountable.
+	\paragraph{Proof} This is the contrapositive of the proposition above.
+	\paragraph{Theorem}The following are equivalent.
+	\begin{enumerate}[label=(\roman*)]
+		\item $A$ is countable.\\
+		\item $\exists$ an injection $f:\mapaB{A}{N}$.\\
+		\item $\exists$ an surjection $g:\mapAb{N}{A}$.
+	\end{enumerate}
+	\paragraph{Proof} We will show that (i)$\implies$(ii)$\implies$(iii)$\implies$(i).\newline
+	\begin{enumerate}[label=(\roman*)]
+		\item $\implies$(ii) Either $A\sim I_n$ or $A\sim\mathbb{N}$. If $A\sim\mathbb{N}$, we are done, as a bijection is an injection.\\
+		If $A\sim I_n$, write $A=\{a_1,a_2,\dots,a_n\}.$\\
+		The function $\hat{f}:\mapab{A}{I_n}, \hat(f)(a_j)=j$ is a bijection.\\
+		Now define $f:\mapaB{A}{N}$ by $f(a_i)=\hat{f}(a_i)=i$. $f$ is an injection since $\hat{f}$ is.\\
+		\item $\implies$(ii) Suppose $f:\mapaB{A}{N}$ is an injection.\\
+		Then $f:\mapab{A}{f(A)}$ is surjective and hence bijective. So $f^{-1}:\mapab{f(A)}{A}$ is also a bijection, and $f^{-1}(f(a))=a$.\\
+		Define $g:\mapAb{N}{A}$ by
+		\begin{equation*}
+		g(n)=\begin{cases}
+			f^{-1}(n), & \textrm{if } n\in f(A)\\
+			a, & \textrm{if } n\notin f(A)
+		\end{cases}
+		\end{equation*}
+		where $a$ is some fixed arbitrary element in $A$.\\
+		$g$ is a surjection, since if $b\in A$ we have $g(f(b))=f^{-1}(f(b))=b$.\\
+		\item $\implies$(i) Let $g:\mapAb{N}{A}$ be a surjection.\\
+		Define $h:\mapaB{A}{N}$ by $h(a)=\min\{n\in\mathbb{N}|g(n)=a\}$, which always has a solution by the well-ordering principle, since $g$ is surjective.\\
+		$h$ is injective since if $h(a)=h(b)$, then $n$ is the minimal natural number with $g(n) = a$ and $g(n) = b$, so $a=b$.\\
+		Therefore $h:\mapab{A}{h(A)}$ is a bijection, so $A\sim h(A)\subseteq\mathbb{N}$, so $A$ and $h(A)$ are subsets of countable sets and so are also countable.
+	\end{enumerate}
+	\paragraph{Proposition}
+	Suppose $A,B,A_1,A_2,A_3,\dots$ are countable sets. Then
+	\begin{enumerate}[label=(\roman*)]
+		\item $A\times B$ is countable.\\
+		\item $\cup_{n=1}{\infty}A_n$ is countable.
+	\end{enumerate}
+	\paragraph{Proof} We assume the extreme case that all of these sets are denumerable.
+	\begin{enumerate}[label=(\roman*)]
+		\item $A\sim B\sim\mathbb{N}$. So we show $\mathbb{N}\times\mathbb{N}\sim\mathbb{N}$. From (ii) in the previous theorem, it is enough to find an injection $f:\mapAB{N\times N}{N}$.
+		$f:\mathbb{N}\times\mathbb{N}\sim\mathbb{N}, f(m,n)=2^m3^n$, which is injective by the fundamental theorem of algebra.\\
+		\item Write the elements of each $A_i\sim\mathbb{N}$ as lists:
+		\begin{itemize}[label=]
+			\item $A_1 = (a_{11},a_{12},a_{13},\dots)$\\
+			\item $A_2 = (a_{21},a_{22},a_{23},\dots)$\\
+			\item $A_3 = (a_{31},a_{32},a_{33},\dots)$\\
+			\item \vdots
+		\end{itemize}
+		Without loss of generality, we can assume $A_i\cap A_j=\emptyset \forall i\neq j$. Now define $f:\mapaB{\cup_{n=1}{\infty}A_n}{N}$ by diagonalization, which is a bijection.\\
+		Or $g:\mapaB{\cup_{n=1}{\infty}A_n}{N}$ by $g(a_{ij})=2^i3^j$, whih is an injection.
+	\end{enumerate}
+\end{document}
